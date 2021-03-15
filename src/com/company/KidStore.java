@@ -11,27 +11,28 @@ public class KidStore {
         int talkingDolls = Integer.parseInt(scanner.nextLine());
         int teddyBears = Integer.parseInt(scanner.nextLine());
         int numberOfMinions = Integer.parseInt(scanner.nextLine());
-        int trucks = Integer.parseInt(scanner.nextLine());
+        int numberOfTrucks = Integer.parseInt(scanner.nextLine());
 
-        double totalPuzzlesSold = numberOfPuzzles * 2.60;
-        double totalTalkingDollsSold = talkingDolls * 3.0;
-        double totalTeddyBearsSold = teddyBears * 4.10;
-        double totalMinionsSold = numberOfMinions * 8.20;
-        double totalTrucksSold = trucks * 2.0;
+        double totalPuzzlesSold = 2.60 * numberOfPuzzles;
+        double totalTalkingDollsSold = 3 * talkingDolls;
+        double totalTeddyBearsSold = 4.10 * teddyBears;
+        double totalMinionsSold = 8.20 * numberOfMinions;
+        double totalTrucksSold = 2 * numberOfTrucks;
 
-        double sum = totalPuzzlesSold + totalTalkingDollsSold + totalTeddyBearsSold + totalMinionsSold + totalTrucksSold;
-        double totalToys = numberOfPuzzles + talkingDolls + teddyBears + numberOfMinions + trucks;
+        double totalToys = numberOfPuzzles + talkingDolls + teddyBears + numberOfMinions + numberOfTrucks;
+        double sumOfOrders = totalPuzzlesSold + totalTalkingDollsSold + totalTeddyBearsSold + totalMinionsSold + totalTrucksSold;
 
         if (totalToys >= 50) {
-            sum = sum - (sum * 0.25);
+            sumOfOrders = sumOfOrders * 0.75;
         }
-        double rent = sum - (sum * 0.10);
-        double isItEnoughForExcursion = Math.abs(rent - excursionPrice);
+        double rent = sumOfOrders * 0.9;
 
-        if (isItEnoughForExcursion >= excursionPrice) {
-            System.out.printf("Yes! %.2f lv left.", isItEnoughForExcursion);
+        if (rent >= excursionPrice) {
+            double moneyLeft = rent - excursionPrice;
+            System.out.printf("Yes! %.2f lv left.%n", moneyLeft);
         } else {
-            System.out.printf("Not enough money! %.2f lv needed.", isItEnoughForExcursion);
+            double moneyLeft = excursionPrice - rent;
+            System.out.printf("Not enough money! %.2f lv needed.%n", moneyLeft);
         }
     }
 }

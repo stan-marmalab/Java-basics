@@ -12,56 +12,54 @@ public class FishingBoat {
         double rentOfTheBoat = 0;
         double amountLeft = 0;
 
-        switch ( season ) {
-
-            case "Spring":
+        switch (season) {
+            case "Spring" -> {
                 rentOfTheBoat = 3000.00;
-                if ( numberOfFisherman <= 6 ) {
-                    rentOfTheBoat = rentOfTheBoat - ( rentOfTheBoat * 0.10);
+                if (numberOfFisherman <= 6) {
+                    rentOfTheBoat = rentOfTheBoat - (rentOfTheBoat * 0.10);
                 }
-                if ( numberOfFisherman > 7 && numberOfFisherman <= 11) {
-                    rentOfTheBoat = rentOfTheBoat - ( rentOfTheBoat * 0.15);
+                if (numberOfFisherman > 7 && numberOfFisherman <= 11) {
+                    rentOfTheBoat = rentOfTheBoat - (rentOfTheBoat * 0.15);
                 }
-                if ( numberOfFisherman > 12 ) {
-                    rentOfTheBoat = rentOfTheBoat - ( rentOfTheBoat * 0.25);
+                if (numberOfFisherman > 12) {
+                    rentOfTheBoat = rentOfTheBoat - (rentOfTheBoat * 0.25);
                 }
-                if ( numberOfFisherman % 2 == 0 ) {
-                    rentOfTheBoat = rentOfTheBoat - ( rentOfTheBoat * 0.05);
+                if (numberOfFisherman % 2 == 0) {
+                    rentOfTheBoat = rentOfTheBoat - (rentOfTheBoat * 0.05);
                 }
-                break;
-            case "Winter":
+            }
+            case "Winter" -> {
                 rentOfTheBoat = 2600.00;
-                if ( numberOfFisherman <= 6 ) {
-                    rentOfTheBoat = rentOfTheBoat - ( rentOfTheBoat * 0.10);
+                if (numberOfFisherman <= 6) {
+                    rentOfTheBoat = rentOfTheBoat - (rentOfTheBoat * 0.10);
                 }
-                if ( numberOfFisherman > 7 && numberOfFisherman <= 11) {
-                    rentOfTheBoat = rentOfTheBoat - ( rentOfTheBoat * 0.15);
+                if (numberOfFisherman > 7 && numberOfFisherman <= 11) {
+                    rentOfTheBoat = rentOfTheBoat - (rentOfTheBoat * 0.15);
                 }
-                if ( numberOfFisherman > 12 ) {
-                    rentOfTheBoat = rentOfTheBoat - ( rentOfTheBoat * 0.25);
+                if (numberOfFisherman > 12) {
+                    rentOfTheBoat = rentOfTheBoat - (rentOfTheBoat * 0.25);
                 }
-                if ( numberOfFisherman % 2 == 0 ) {
-                    rentOfTheBoat = rentOfTheBoat - ( rentOfTheBoat * 0.05);
+                if (numberOfFisherman % 2 == 0) {
+                    rentOfTheBoat = rentOfTheBoat - (rentOfTheBoat * 0.05);
                 }
-                break;
-            case "Summer":
-            case "Autumn":
+            }
+            case "Summer", "Autumn" -> {
                 rentOfTheBoat = 4200.00;
-                if ( numberOfFisherman <= 6 ) {
-                    rentOfTheBoat = rentOfTheBoat - ( rentOfTheBoat * 0.10);
+                if (numberOfFisherman <= 6) {
+                    rentOfTheBoat = rentOfTheBoat - (rentOfTheBoat * 0.10);
                 }
-                if ( numberOfFisherman > 7 && numberOfFisherman <= 11) {
-                    rentOfTheBoat = rentOfTheBoat - ( rentOfTheBoat * 0.15);
+                if (numberOfFisherman > 7 && numberOfFisherman <= 11) {
+                    rentOfTheBoat = rentOfTheBoat - (rentOfTheBoat * 0.15);
                 }
-                if ( numberOfFisherman > 12 ) {
-                    rentOfTheBoat = rentOfTheBoat - ( rentOfTheBoat * 0.25);
+                if (numberOfFisherman > 12) {
+                    rentOfTheBoat = rentOfTheBoat - (rentOfTheBoat * 0.25);
                 }
-                if ( !season.equals("Autumn") ) {
+                if (!season.equals("Autumn")) {
                     if (numberOfFisherman % 2 == 0) {
                         rentOfTheBoat = rentOfTheBoat - (rentOfTheBoat * 0.05);
                     }
                 }
-                break;
+            }
         }
 
         if ( groupBudget >= rentOfTheBoat) {

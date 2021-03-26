@@ -1,7 +1,7 @@
 package com.company;
 
 import java.util.Scanner;
-public class Jorney {
+public class Journey {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

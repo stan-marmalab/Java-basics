@@ -11,8 +11,8 @@ public class Jorney {
         String destination1 = "Bulgaria";
         String destination2 = "Balkans";
         String destination3 = "Europe";
-        String acomodation1 = "Camp";
-        String acomodation2 = "Hotel";
+        String accommodation1 = "Camp";
+        String accommodation2 = "Hotel";
 
         String output = "";
         String output2 = "";
@@ -26,11 +26,11 @@ public class Jorney {
             switch (season) {
                 case "summer" -> {
                     output = String.format("Somewhere in %s", destination1);
-                    output2 = String.format("%s - %.2f", acomodation1, sumBgSummer);
+                    output2 = String.format("%s - %.2f", accommodation1, sumBgSummer);
                 }
                 case "winter" -> {
                     output = String.format("Somewhere in %s", destination1);
-                    output2 = String.format("%s - %.2f", acomodation2, sumBgWinter);
+                    output2 = String.format("%s - %.2f", accommodation2, sumBgWinter);
                 }
             }
         }
@@ -38,17 +38,17 @@ public class Jorney {
             switch (season) {
                 case "summer" -> {
                     output = String.format("Somewhere in %s", destination2);
-                    output2 = String.format("%s - %.2f", acomodation1, sumBalkansSummer);
+                    output2 = String.format("%s - %.2f", accommodation1, sumBalkansSummer);
                 }
                 case "winter" -> {
                     output = String.format("Somewhere in %s", destination2);
-                    output2 = String.format("%s - %.2f", acomodation2, sumBalkansWinter);
+                    output2 = String.format("%s - %.2f", accommodation2, sumBalkansWinter);
                 }
             }
         }
         if (budget > 1000){
             output = String.format("Somewhere in %s", destination3);
-            output2 = String.format("%s - %.2f", acomodation2,sumEurope);
+            output2 = String.format("%s - %.2f", accommodation2,sumEurope);
         }
 
         System.out.println(output);

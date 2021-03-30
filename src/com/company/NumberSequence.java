@@ -4,24 +4,22 @@ import java.util.Scanner;
 
 public class NumberSequence {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int min, max;
-        int n = scan.nextInt();
-        int[] arr = new int[n];
+        Scanner scanner = new Scanner(System.in);
 
-        for (int i = 0; i < n; i++) {
-            arr[i] = scan.nextInt();
+        int numberOfNumbers = Integer.parseInt(scanner.nextLine());
+        int min = Integer.MIN_VALUE;
+        int max = Integer.MAX_VALUE;
+
+        for (int i = 0; i < numberOfNumbers; i++) {
+           int numbers = Integer.parseInt(scanner.nextLine());
+
+           if ( numbers < max ) {
+               max = numbers;
+           } else if ( numbers > min ) {
+               min = numbers;
+           }
         }
-        min = arr[0];
-        max = arr[0];
-        for (int i = 0; i < n; i++) {
-            if (min > arr[i]) {
-                min = arr[i];
-            }
-            if (max < arr[i]) {
-                max = arr[i];
-            }
-        }
+
         System.out.println("Max number: " + max);
         System.out.println("Min number: " + min);
     }
